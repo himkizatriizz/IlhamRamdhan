@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Media pembelajaran keamanan data dan privasi media sosial.">
+    <title>DataGuard Pro | Keamanan Data</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="navbar-brand">
+        <a href="#dashboard" class="logo">◈ Data<span>Guard</span></a>
+        <div class="user-badge">
+            <strong>Ilham Ramdhan</strong>
+            <span>NIM H0625301</span>
+        </div>
+    </div>
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#materi">Materi</a>
+        <a href="#analisis">Analisis</a>
+        <a href="#kuis">Kuis</a>
+    </nav>
+</header>
+
+<!-- LOGIN -->
+<section class="login-container" id="login">
+    <form class="login-card" id="loginForm">
+        <div class="brand-mark">◈</div>
+        <h1>Data<span>Guard</span></h1>
+        <p>Media Pembelajaran Keamanan Data Media Sosial</p>
+
+        <input type="text" id="nama"
+            placeholder="Masukkan nama kamu" required>
+
+        <select id="role">
+            <option value="Siswa">Siswa</option>
+            <option value="Guru">Guru</option>
+        </select>
+
+        <button type="submit" class="primary-button">
+            Masuk Sekarang →
+        </button>
+    </form>
+</section>
+
+<!-- WEBSITE -->
+<main id="website" hidden>
+
+<section class="hero" id="dashboard">
+    <div class="hero-copy">
+        <p class="label">MEDIA PEMBELAJARAN DIGITAL</p>
+        <h1>
+            Jaga Data Pribadi.<br>
+            <span>Lindungi Identitas Digital.</span>
+        </h1>
+        <p>
+            Pelajari cara menganalisis keamanan data,
+            mengenali ancaman, dan melindungi privasi
+            saat menggunakan media sosial.
+        </p>
+        <a href="#materi" class="button">Mulai Belajar →</a>
+    </div>
+    <div class="shield">⬡</div>
+</section>
+
+<section class="welcome">
+    <div>
+        <p class="label">SELAMAT DATANG</p>
+        <h2 id="sapaan">Selamat Datang!</h2>
+        <p>Selamat belajar di DataGuard Pro.</p>
+    </div>
+    <button type="button" id="logoutBtn" class="secondary-button">
+        Keluar
+    </button>
+</section>
+
+<!-- MATERI -->
+<section class="section" id="materi">
+    <div class="section-title">
+        <p class="label">01 / PEMBELAJARAN</p>
+        <h2>Materi Keamanan Data</h2>
+        <p>Pelajari sembilan materi penting berikut.</p>
+    </div>
+
+    <div class="grid">
+
+        <article class="card">
+            <div class="icon">🛡</div>
+            <h3>Konsep Dasar Keamanan Siber</h3>
+            <p>Memahami prinsip CIA, jenis pelaku ancaman, dan pertahanan berlapis.</p>
+            <button onclick="bukaMateri(0)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">◎</div>
+            <h3>Data Pribadi</h3>
+            <p>Mengenal jenis data pribadi dan pentingnya menjaga kerahasiaan informasi.</p>
+            <button onclick="bukaMateri(1)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">⌁</div>
+            <h3>Jejak Digital</h3>
+            <p>Memahami rekam aktivitas pengguna di dunia internet.</p>
+            <button onclick="bukaMateri(2)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">⚠</div>
+            <h3>Ancaman Digital</h3>
+            <p>Mengenali phishing, penipuan, dan pembajakan akun.</p>
+            <button onclick="bukaMateri(3)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">🔐</div>
+            <h3>Perlindungan Data</h3>
+            <p>Strategi menjaga keamanan akun dan informasi pribadi.</p>
+            <button onclick="bukaMateri(4)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">◇</div>
+            <h3>Etika Digital</h3>
+            <p>Menggunakan media sosial secara bijak dan bertanggung jawab.</p>
+            <button onclick="bukaMateri(5)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">⚖</div>
+            <h3>Hukum &amp; Regulasi</h3>
+            <p>Hak dan kewajiban berdasarkan UU PDP dan UU ITE.</p>
+            <button onclick="bukaMateri(6)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">🔍</div>
+            <h3>Literasi Digital &amp; Hoaks</h3>
+            <p>Membedakan hoaks, misinformasi, dan konten manipulasi AI.</p>
+            <button onclick="bukaMateri(7)">Pelajari →</button>
+        </article>
+
+        <article class="card">
+            <div class="icon">📋</div>
+            <h3>Studi Kasus Nyata</h3>
+            <p>Mempelajari kasus kebocoran data dan pembajakan nyata.</p>
+            <button onclick="bukaMateri(8)">Pelajari →</button>
+        </article>
+
+    </div>
+
+    <article id="materiDetail" class="detail-box" hidden>
+        <h2 id="judulMateri"></h2>
+        <div id="isiMateri"></div>
+        <button onclick="tutupMateri()" class="secondary-button">
+            Tutup Materi
+        </button>
+    </article>
+</section>
+
+<!-- ANALISIS -->
+<section class="section analysis" id="analisis">
+    <div class="section-title">
+        <p class="label">02 / ANALISIS KEAMANAN</p>
+        <h2>Analisis Kebiasaan Digital</h2>
+        <p>Centang kebiasaan yang sudah kamu lakukan.</p>
+    </div>
+
+    <div class="analysis-card">
+        <label><input type="checkbox" class="habit"> Menggunakan kata sandi yang kuat.</label>
+        <label><input type="checkbox" class="habit"> Mengaktifkan autentikasi dua faktor.</label>
+        <label><input type="checkbox" class="habit"> Mengatur akun menjadi privat.</label>
+        <label><input type="checkbox" class="habit"> Memeriksa tautan sebelum mengeklik.</label>
+        <label><input type="checkbox" class="habit"> Tidak membagikan kode OTP.</label>
+        <label><input type="checkbox" class="habit"> Menggunakan kata sandi berbeda untuk setiap akun.</label>
+        <label><input type="checkbox" class="habit"> Selalu memperbarui aplikasi dan sistem secara berkala.</label>
+
+        <button id="analysisBtn" class="primary-button">
+            Analisis Keamanan Saya
+        </button>
+
+        <div class="result">
+            <h2 id="nilai">--</h2>
+            <h3 id="status">Belum Dianalisis</h3>
+            <p id="saran">Hasil analisis akan muncul di sini.</p>
+            <div id="rincian" class="rincian"></div>
+        </div>
+    </div>
+</section>
+
+<!-- SIMULASI PHISHING -->
+<section class="section">
+    <div class="section-title">
+        <p class="label">03 / SIMULASI</p>
+        <h2>Kenali Pesan Phishing</h2>
+        <p>Perhatikan contoh pesan berikut.</p>
+    </div>
+
+    <div class="simulation">
+        <div class="fake-message">
+            <b>🎁 Hadiah Resmi</b>
+            <p>Selamat! Kamu memenangkan smartphone.</p>
+            <p>Klik tautan berikut dan masukkan password serta OTP untuk mengambil hadiah.</p>
+            <span>Pesan dari akun tidak dikenal.</span>
+        </div>
+
+        <h3>Apa tindakan yang paling tepat?</h3>
+
+        <div class="simulation-actions">
+            <button onclick="jawab(false)">A. Klik tautan tersebut.</button>
+            <button onclick="jawab(true)">B. Abaikan dan laporkan pesan.</button>
+            <button onclick="jawab(false)">C. Kirim kode OTP kepada pengirim.</button>
+        </div>
+
+        <p id="hasilSimulasi"></p>
+    </div>
+</section>
+
+<!-- KUIS -->
+<section class="section" id="kuis">
+    <div class="section-title">
+        <p class="label">04 / EVALUASI</p>
+        <h2>Uji Pengetahuanmu</h2>
+        <p>Jawab sembilan pertanyaan berikut.</p>
+    </div>
+
+    <div class="quiz-card">
+        <p id="nomorSoal" class="quiz-count"></p>
+
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
+
+        <h3 id="pertanyaan"></h3>
+
+        <div id="pilihan"></div>
+
+        <p id="feedback"></p>
+
+        <button id="nextBtn" class="primary-button" disabled>
+            Berikutnya →
+        </button>
+    </div>
+</section>
+
+<section class="closing">
+    <p class="label">DATAGUARD PRO</p>
+    <h2>Be Smart. Stay Secure.</h2>
+    <p>Keamanan digital dimulai dari diri sendiri.</p>
+</section>
+
+</main>
+
+<footer>
+    <h3>◈ DataGuard Pro</h3>
+    <p>Media Ajar Analisis Keamanan Data Pengguna Media Sosial</p>
+    <small>© 2026 DataGuard Pro</small>
+</footer>
+
+</body>
+</html>
